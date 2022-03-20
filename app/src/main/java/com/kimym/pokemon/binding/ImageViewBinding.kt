@@ -13,6 +13,15 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 
+@BindingAdapter("setDetailImage")
+fun ImageView.setDetailImage(url: String?) {
+    url?.let {
+        Glide.with(context)
+            .load(url)
+            .into(this)
+    }
+}
+
 @BindingAdapter("setImage", "setIndexColor")
 fun ImageView.setImage(url: String?, tvIndex: TextView) {
     url?.let {

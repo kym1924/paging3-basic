@@ -1,6 +1,7 @@
-package com.kimym.pokemon.presentation
+package com.kimym.pokemon.presentation.main
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -8,13 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kimym.pokemon.data.entity.PokemonEntity
 import com.kimym.pokemon.databinding.ItemPokemonBinding
 
-class MainAdapter :
+class MainAdapter(private val move: (view: View, pokemon: PokemonEntity, color: Int?) -> Unit) :
     PagingDataAdapter<PokemonEntity, MainAdapter.PokemonViewHolder>(pokemonDiffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemPokemonBinding.inflate(inflater)
-        return PokemonViewHolder(binding)
+        return PokemonViewHolder(binding, move)
     }
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
@@ -23,11 +24,18 @@ class MainAdapter :
         }
     }
 
-    class PokemonViewHolder(private val binding: ItemPokemonBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        fun bind(pokemon: PokemonEntity) {
-            binding.pokemon = pokemon
-            binding.executePendingBindings()
+    class PokemonViewHolder(
+        private val binding: ItemPokemonBinding,
+        private val move: (view: View, pokemon: PokemonEntity, color: Int?) -> Unit
+    ) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(pokemonEntity: PokemonEntity) {
+            with(binding) {
+                pokemon = pokemonEntity
+                executePendingBindings()
+                root.setOnClickListener {
+                    move(imgPokemon, pokemonEntity, tvPokemonIndex.backgroundTintList?.defaultColor)
+                }
+            }
         }
     }
 

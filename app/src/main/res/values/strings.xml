@@ -2,4 +2,19 @@
     <string name="app_name">Pokemon</string>
     <string name="main_index">%03d</string>
     <string name="pokemon_image_url">https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/%d.png</string>
+
+    <string name="transition">transition</string>
+    <string name="intent_pokemon">pokemon</string>
+    <string name="intent_color">color</string>
+
+    <string name="detail_index">No.%03d</string>
+    <string name="height">Height %.1f M</string>
+    <string name="weight">Weight %.1f KG</string>
+    <string name="hp">HP</string>
+    <string name="attack">ATTACK</string>
+    <string name="defense">DEFENSE</string>
+    <string name="special_attack">SPECIAL-ATTACK</string>
+    <string name="special_defense">SPECIAL-DEFENSE</string>
+    <string name="speed">SPEED</string>
+    <string name="stat_count">%d / %d</string>
 </resources>
