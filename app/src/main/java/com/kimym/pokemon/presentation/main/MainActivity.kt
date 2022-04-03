@@ -1,10 +1,10 @@
 package com.kimym.pokemon.presentation.main
 
 import android.app.ActivityOptions
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.kimym.pokemon.R
 import com.kimym.pokemon.data.entity.PokemonEntity
 import com.kimym.pokemon.databinding.ActivityMainBinding

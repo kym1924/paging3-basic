@@ -2,9 +2,9 @@ package com.kimym.pokemon.presentation.detail
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.kimym.pokemon.R
 import com.kimym.pokemon.data.entity.PokemonEntity
 import com.kimym.pokemon.databinding.ActivityDetailBinding
