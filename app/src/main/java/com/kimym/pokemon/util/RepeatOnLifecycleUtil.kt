@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 
 fun LifecycleOwner.repeatOnLifecycle(collect: suspend () -> Unit) {
     lifecycleScope.launch {
-        lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+        repeatOnLifecycle(Lifecycle.State.STARTED) {
             collect()
         }
     }
